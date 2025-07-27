@@ -12,7 +12,7 @@ jobs:
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Fetch recent commits
         run: |
