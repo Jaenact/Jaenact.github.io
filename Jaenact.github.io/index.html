@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Jaenact - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --accent: #00ffa2;
+      --card-bg: #1b1b1b;
+      --badge-bg: #2c2c2c;
+      --border: #333;
+    }
+    [data-theme='light'] {
+      --bg-color: #ffffff;
+      --text-color: #111;
+      --accent: #007a5c;
+      --card-bg: #f2f2f2;
+      --badge-bg: #ddd;
+      --border: #ccc;
+    }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: var(--card-bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .toggle {
+      cursor: pointer;
+      background: none;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+    .links {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .links a {
+      color: var(--accent);
+      margin: 0 0.8rem;
+      text-decoration: none;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .grid, .grid-two {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .card {
+      flex: 1 1 45%;
+      min-width: 300px;
+      background: var(--card-bg);
+      padding: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 0 1px var(--border);
+    }
+    .card h3 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: var(--badge-bg);
+      color: var(--accent);
+      padding: 2px 6px;
+      border-radius: 6px;
+      margin-left: 6px;
+    }
+    .card ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 2rem 0 1rem;
+      color: #888;
+    }
+    @media (max-width: 768px) {
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <header>
+    <div><strong>Jaenact</strong></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle" id="themeToggle">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <div class="container" id="home">
+    <h1>Jaenact</h1>
+    <p class="subtitle" id="subtitle">정보보안 컨설턴트를 지망하는 학생입니다.</p>
+    <div class="links">
+      <a href="https://github.com/Jaenact" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="mailto:leejaehyun0908@naver.com"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="grid-two">
+        <div class="card">
+          <h3>학력</h3>
+          <ul>
+            <li>가천대학교 사이버보안학과 3학년 재학</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>교육</h3>
+          <ul>
+            <li>화이트햇 스쿨 보안 교육 수료</li>
+            <li>OSSCA 2025 Project Discovery 멘티</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>활동 및 프로젝트</h2>
+      <div class="grid">
+        <div class="card"><h3>Pay1oad 동아리</h3><p>WPA 해킹, 웹 이상탐지</p></div>
+        <div class="card"><h3>악성코드 개발 실습</h3><p>웹프로그래밍 포함</p></div>
+        <div class="card"><h3>ELK 기반 로그 수집</h3><p>nginx 로그 분석</p></div>
+        <div class="card"><h3>다크웹 추적</h3><p>악성 유저 식별</p></div>
+        <div class="card"><h3>남명학사 리더십</h3><p>7대 라온 / 8대 이음</p></div>
+        <div class="card"><h3>AI 모델</h3><p>쓰레기 자동 분류</p></div>
+        <div class="card"><h3>CPS 세미나</h3><p>A팀 팀장, 보안 발표</p></div>
+        <div class="card"><h3>SW공학 개발서</h3><p>실습 기반 문서화</p></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Nuclei CVE Template <span class="badge">완료</span></h3>
+          <p>CVE-2025-1302 탐지 템플릿 작성 및 PR</p>
+          <a href="https://github.com/projectdiscovery/nuclei-templates/pull/xxxxx" target="_blank">보기</a>
+        </div>
+        <div class="card">
+          <h3>쓰레기 분류 AI <span class="badge">진행중</span></h3>
+          <p>이미지 분류 기반 환경 데이터 처리</p>
+        </div>
+        <div class="card">
+          <h3>Dreamhack 문제 제작 <span class="badge">완료</span></h3>
+          <p>Web/Reverse 문제 제작 및 테스트</p>
+        </div>
+        <div class="card">
+          <h3>CTF 기록 정리 블로그 <span class="badge">진행중</span></h3>
+          <p>Jekyll 기반 CTF 풀이 정리</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p style="text-align:center;">leejaehyun0908@naver.com</p>
+    </section>
+  </div>
+
+  <footer>&copy; 2025 Jaenact. Designed for portfolio use.</footer>
+
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      const html = document.body;
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+      localStorage.setItem("theme", current === "dark" ? "light" : "dark");
+    });
+
+    // 언어 자동 감지
+    const lang = navigator.language.startsWith("ko") ? "ko" : "en";
+    if (lang === "en") {
+      document.documentElement.lang = "en";
+      document.getElementById("subtitle").textContent = "Aspiring Information Security Consultant.";
+      document.querySelector("h2").textContent = "Education";
+      document.querySelector("#about h2").textContent = "Activities & Projects";
+      document.querySelector("#projects h2").textContent = "My Projects";
+      document.querySelector("#contact h2").textContent = "Contact";
+    }
+
+    // 저장된 테마 불러오기
+    const saved = localStorage.getItem("theme");
+    if (saved) document.body.setAttribute("data-theme", saved);
+  </script>
+</body>
+</html>
