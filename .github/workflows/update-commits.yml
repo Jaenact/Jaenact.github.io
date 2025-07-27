@@ -1,0 +1,29 @@
+name: Update Recent Commits
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - uses: actions/checkout@v3
+
+      - name: Fetch recent commits
+        run: |
+          mkdir -p _data
+          curl -s https://api.github.com/repos/Jaenact/Jaenact.github.io/commits?per_page=5 |
+          jq -r '.[] | "- message: \(.commit.message | gsub("\n"; " ") | @json)\n  url: \(.html_url)\n  date: \(.commit.author.date | split("T")[0])"' > _data/commits.yml
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add _data/commits.yml
+          git commit -m "🔄 Update recent commits [bot]" || echo "No changes to commit"
+          git push
